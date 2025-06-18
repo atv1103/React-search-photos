@@ -1,0 +1,22 @@
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  padding: 30px;
+}
+
+.headerBottom {
+  background-image: url('../../assets/searchBg.png');
+  padding: 30px;
+}
+
+.navLink {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navLink:first-child {
+  margin-right: 7px;
+}

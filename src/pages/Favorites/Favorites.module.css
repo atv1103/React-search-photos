@@ -1,0 +1,58 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .title {
+    padding: 10px 30px;
+  }
+  
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    padding: 10px;
+  }
+  
+  .image {
+    max-width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    position: absolute;
+    bottom: 8px;
+    padding: 6px 12px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .card:hover .button {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .button:hover {
+    background-color: #b71c1c;
+  }
+  
+  .empty {
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
