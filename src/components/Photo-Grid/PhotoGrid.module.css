@@ -1,0 +1,49 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border-radius: 12px;
+  }
+  
+  .card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .likeButton {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    padding: 5px 17px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  .card:hover .likeButton {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .favorite {
+    background-color: red !important;
+  }
+  

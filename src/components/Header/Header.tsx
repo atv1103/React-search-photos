@@ -2,11 +2,15 @@ import styles from "./Header.module.css";
 import logo from "../../assets/logo.png";
 import searchImg from "../../assets/search.svg";
 import heartImg from "../../assets/heart.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Search from "../Search/Search";
-import { useLocation } from "react-router-dom";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  query: string;
+  setQuery: React.Dispatch<React.SetStateAction<string>>;
+}
+
+const Header: React.FC<HeaderProps> = ({ query, setQuery }) => {
   const location = useLocation();
 
   return (
@@ -28,7 +32,7 @@ const Header: React.FC = () => {
       </div>
       {location.pathname === "/" && (
         <div className={styles.headerBottom}>
-          <Search />
+          <Search query={query} setQuery={setQuery} />
         </div>
       )}
     </div>

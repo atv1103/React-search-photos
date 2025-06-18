@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { loadFavoritesFromStorage } from "./store/favoritesSlice";
@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 
 export default function App() {
   const dispatch = useDispatch();
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     dispatch(loadFavoritesFromStorage());
@@ -17,10 +18,10 @@ export default function App() {
 
   return (
     <Router>
-      <Header/>
+      <Header query={query} setQuery={setQuery} />
       <div className={styles.app}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home query={query} />} />
           <Route path="/photo/:id" element={<PhotoDetail />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
